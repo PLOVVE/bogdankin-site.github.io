@@ -1,0 +1,203 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Заголовок с эффектом паутины */
+header {
+    background: linear-gradient(135deg, #e74c3c, #c0392b), url('header-bg.jpg') center/cover no-repeat;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Навигационное меню с эффектом паутины */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #34495e;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f39c12;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #f39c12;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Контейнер с содержимым */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Введение на главной странице */
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff6f61, #ff4757);
+    border-radius: 10px;
+    color: white;
+}
+
+.intro img {
+    max-width: 300px;
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text {
+    max-width: 60%;
+}
+
+.intro-text h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Футер с эффектом паутины */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Дополнительные стили для кнопок */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Анимации */
+@keyframes spiderWeb {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 20px 20px;
+    }
+}
+
+header::before, nav::before, .container::before, footer::before {
+    animation: spiderWeb 2s linear infinite;
+}
+
+
+
